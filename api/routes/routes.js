@@ -12,5 +12,6 @@ router.get('/:username/scores', scoresController.userScores);
 
 // POST routes
 router.post('/', userController.createUser)
+router.post('/:username/scores', scoresController.updateScore);
 
 module.exports = router;
