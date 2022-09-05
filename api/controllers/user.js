@@ -5,7 +5,7 @@ const findAll = async (req,res) => {
     try {
         const users = await User.find({});
         res.status(200).json({users})
-    } catch (error) {
+       } catch (error) {
         res.status(404).json({message: error})
     }
 }
