@@ -14,13 +14,15 @@ const findAll = async (req,res) => {
 
 const findUser = async (req,res) => {
     try {
-        console.log(req.params.username)
         const user = await User.findOne({"username": req.params.username});
+        if (!user) {
+            return res.status(404).send();
+        } else {
         res.status(201).json({user})
-
+        }
     } catch (error) {
         console.log(error);
-        res.status(404).json({message: error})
+        res.status(500).json({message: error})
     }
 
 
