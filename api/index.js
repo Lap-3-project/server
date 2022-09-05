@@ -13,4 +13,7 @@ const startDatabaseAndServer = async () => {
             .catch(error => console.log("Can't connect to db or server: ", error))
 }
 
+
+
 startDatabaseAndServer();
+
