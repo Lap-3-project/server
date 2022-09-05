@@ -15,9 +15,7 @@ const updateScore = async (req,res) => {
 
     try {
         const user = await User.findOne({"username": req.params.username})
-        console.log(user);
         const newScore = req.body.score
-        console.log(newScore);
         switch (req.body.category) {
             case 'animals':
                 if(user.scores.animals < newScore) {
