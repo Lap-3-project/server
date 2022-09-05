@@ -12,5 +12,5 @@
 
 #### POST Routes (Sending JSON)
 
-* /users/ (Requires: usernname) will create a new user with that username
+* /users/ (Requires: username) will create a new user with that username
 * /users/:username/scores (Requires: username, category, score) will update that users score assuming it is higher than their stored score for that category
