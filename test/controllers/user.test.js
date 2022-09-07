@@ -24,13 +24,12 @@ describe('User controllers', () => {
         api.close(done);
     })
 
-    it('it retrieves users from database', () => {
-        supertest(api).get('/users').expect((res) => {
-            expect(res.status).toBe(200)
-        })
+    it('it retrieves users from database', async () => {
+       const response = await supertest(api).get('/users')
+            expect(response.statusCode).toBe(200)
     })
 
-    it('it checks if it retrives one user', async () => {
+    it('it checks if it retrieves one user', async () => {
         const response = await supertest(api).get('/users/admin')
             expect(response.statusCode).toEqual(201)
     })
